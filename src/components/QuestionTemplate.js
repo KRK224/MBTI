@@ -18,7 +18,7 @@ const QuestionTemplate = ({question, history})=>{
       {question.sndAnswer.text}
     </div>
     <button>이전</button>
-    <buttoon>다음</buttoon>
+    <button>다음</button>
     </>
   )
 }
