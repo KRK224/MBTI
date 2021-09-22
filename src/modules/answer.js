@@ -6,11 +6,13 @@ const EINCREASE = 'answer/EINCREASE';
 const NINCREASE = 'answer/NINCREASE';
 const TINCREASE = 'answer/TINCREASE';
 const JINCREASE = 'answer/JINCREASE';
+const INITIALIZE = 'answer/INITIALIZE';
 
 export const eincrease = createAction(EINCREASE);
 export const nincrease = createAction(NINCREASE);
 export const tincrease = createAction(TINCREASE);
 export const jincrease = createAction(JINCREASE);
+export const initialize_answer = createAction(INITIALIZE);
 
 const initState = {
   EvsI: 0,
@@ -24,6 +26,7 @@ const answer = handleActions({
   [NINCREASE]: (state) => ({NvsS: state.NvsS + 1}),
   [TINCREASE]: (state) => ({TvsF: state.TvsF + 1}),
   [JINCREASE]: (state) =>({JvsP: state.JvsP + 1}),
+  [INITIALIZE]: (state) => ({...initState})
 },
   initState
 );

@@ -1,10 +1,13 @@
 import { createAction, handleActions } from "redux-actions";
+import produce from 'immer';
 
 const FSTCLICKED = 'questions/FSTCLICKED';
 const SNDCLICKED = 'questions/SNDCLICKED';
+const INITIALIZE = 'questions/INITIALIZE';
 
 export const fstClicked = createAction(FSTCLICKED, idx=>idx);
 export const sndClicked = createAction(SNDCLICKED, idx=>idx);
+export const initialize_ques = createAction(INITIALIZE);
 
 const initState = {
   questions: [
@@ -47,6 +50,123 @@ const initState = {
         isClicked: false,
       },
     },
+    {
+      idx: 3,
+      type: 'EvsI',
+      query: 'EvsI 질문입니다.',
+      fstAnswer: {
+        text:'E', 
+        isClicked: false,
+      },
+      sndAnswer: {
+        text: 'I',
+        isClicked: false,
+      },
+    },
+    {
+      idx: 4,
+      type: 'EvsI',
+      query: 'EvsI 질문입니다.',
+      fstAnswer: {
+        text:'E', 
+        isClicked: false,
+      },
+      sndAnswer: {
+        text: 'I',
+        isClicked: false,
+      },
+    },
+    {
+      idx: 5,
+      type: 'EvsI',
+      query: 'EvsI 질문입니다.',
+      fstAnswer: {
+        text:'E', 
+        isClicked: false,
+      },
+      sndAnswer: {
+        text: 'I',
+        isClicked: false,
+      },
+    },
+    {
+      idx: 6,
+      type: 'EvsI',
+      query: 'EvsI 질문입니다.',
+      fstAnswer: {
+        text:'E', 
+        isClicked: false,
+      },
+      sndAnswer: {
+        text: 'I',
+        isClicked: false,
+      },
+    },
+    {
+      idx: 7,
+      type: 'EvsI',
+      query: 'EvsI 질문입니다.',
+      fstAnswer: {
+        text:'E', 
+        isClicked: false,
+      },
+      sndAnswer: {
+        text: 'I',
+        isClicked: false,
+      },
+    },
+    {
+      idx: 8,
+      type: 'EvsI',
+      query: 'EvsI 질문입니다.',
+      fstAnswer: {
+        text:'E', 
+        isClicked: false,
+      },
+      sndAnswer: {
+        text: 'I',
+        isClicked: false,
+      },
+    },
+    {
+      idx: 9,
+      type: 'EvsI',
+      query: 'EvsI 질문입니다.',
+      fstAnswer: {
+        text:'E', 
+        isClicked: false,
+      },
+      sndAnswer: {
+        text: 'I',
+        isClicked: false,
+      },
+    },
+    {
+      idx: 10,
+      type: 'EvsI',
+      query: 'EvsI 질문입니다.',
+      fstAnswer: {
+        text:'E', 
+        isClicked: false,
+      },
+      sndAnswer: {
+        text: 'I',
+        isClicked: false,
+      },
+    },
+    {
+      idx: 11,
+      type: 'JvsP',
+      query: 'JvsP 질문입니다.',
+      fstAnswer: {
+        text:'Edkjfiejkadljfiejakldjfiejfakldjfiejfakdljfi', 
+        isClicked: false,
+      },
+      sndAnswer: {
+        text: 'I',
+        isClicked: false,
+      },
+    },
   ]
 };
 
@@ -65,9 +185,9 @@ const questions = handleActions({
   }),
   [SNDCLICKED]: (state, action) =>({
     ...state,
-    qeustions: state.questions.map(question => {
+    questions: state.questions.map(question => {
       return(
-      question.idx ===action.payload?{
+      question.idx === action.payload ?{
         ...question,
         fstAnswer: {...question.fstAnswer, isClicked: false},
         sndAnswer: {...question.sndAnswer, isClicked: true},
@@ -75,6 +195,7 @@ const questions = handleActions({
       )
     })
   }),
+  [INITIALIZE]: (state) => produce(initState, draft=> draft),
 },
   initState,
 )

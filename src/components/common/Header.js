@@ -1,11 +1,12 @@
-import React from 'react';
+import React, { useCallback } from 'react';
 import styled from 'styled-components';
 import {IoMdHome} from "react-icons/io";
 import {NavLink} from 'react-router-dom';
+import { useDispatch } from 'react-redux';
+import { initialize_answer } from '../../modules/answer';
+import { initialize_ques } from '../../modules/questions';
 
 const HeaderBlock = styled.div`
-  position: fixed;
-  top:0;
   padding: 1rem;
   width: 100%;
   display: flex;
@@ -22,10 +23,15 @@ const activeStyle ={
 };
 
 const Header =() =>{
+  const dispatch = useDispatch();
+  const initialize = useCallback(()=>{
+    dispatch(initialize_answer());
+    dispatch(initialize_ques());
+  }, [dispatch])
   return (
     <HeaderBlock>
       <div className="home-logo">
-        <NavLink activeStyle={activeStyle} to='/'> 
+        <NavLink activeStyle={activeStyle} to='/' onClick={initialize}> 
           <IoMdHome />
         </NavLink>
       </div>
