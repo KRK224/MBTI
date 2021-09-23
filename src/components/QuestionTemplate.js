@@ -98,33 +98,30 @@ const AnswerBtn = styled.button`
     }
 `;
 
-const GetResultBtn = styled.button`
-  display:none;
-  width: 60%;
-  height: 100%;
-  padding: 10px;
-  border: none;
-  border-radius: 5px;
-  margin-top: 2rem;
-  background-color: #00e5ff;
-  color: black;
+// const GetResultBtn = styled.button`
+//   display:none;
+//   width: 50%;
+//   height: 100%;
+//   padding: 10px;
+//   border: none;
+//   border-radius: 5px;
+//   margin-top: 2rem;
+//   background-color: #00e5ff;
+//   color: black;
 
-  &:hover {
-    background-color: #6effff;
-  }
-  ${props=>
-    props.isClicked &&
-    css`
-      display:block;
-    `
-  }
-
-`;
-
+//   &:hover {
+//     background-color: #6effff;
+//   }
+//   ${props=>
+//     props.isClicked &&
+//     css`
+//       display:block;
+//     `
+//   }
+// `;
 
 
-
-const QuestionTemplate = ({ question, fstClicked, sndClicked }) => {
+const QuestionTemplate = ({ question, questions, fstClicked, sndClicked, calcResult }) => {
   return (
     <QuestionTemplateBlock>
       <div className='progressBtn'>
@@ -158,9 +155,11 @@ const QuestionTemplate = ({ question, fstClicked, sndClicked }) => {
         <div className="queryText">{question.query}</div>
         {question.idx ===11?
           <div className="btnAndResult">
-            <AnswerBtn className="fstAnswer" isClicked={question.fstAnswer.isClicked} idx={question.idx} onClick={fstClicked}>{question.fstAnswer.text}</AnswerBtn>
-            <AnswerBtn className="sndAnser" isClicked={question.sndAnswer.isClicked} idx={question.idx} onClick={sndClicked}>{question.sndAnswer.text}</AnswerBtn>
-            <GetResultBtn isClicked={question.fstAnswer.isClicked || question.sndAnswer.isClicked}>결과 보기</GetResultBtn>
+            <Link to='/result' style={{textDecoration:'none'}}>
+              <AnswerBtn className="fstAnswer" isClicked={question.fstAnswer.isClicked} idx={question.idx} onClick={()=>{fstClicked(); calcResult(questions);}}>{question.fstAnswer.text}</AnswerBtn>
+              <AnswerBtn className="sndAnser" isClicked={question.sndAnswer.isClicked} idx={question.idx} onClick={()=>{sndClicked(); calcResult(questions);}}>{question.sndAnswer.text}</AnswerBtn>
+            </Link>
+            {/* <GetResultBtn isClicked={question.fstAnswer.isClicked || question.sndAnswer.isClicked}>결과 보기</GetResultBtn> */}
           </div>
           :
           <div className="btnAndResult">

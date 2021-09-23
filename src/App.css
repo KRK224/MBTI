@@ -1,5 +1,6 @@
 .App {
   text-align: center;
+
 }
 
 .App-logo {
@@ -37,3 +38,11 @@
   }
 }
 
+
+.container {
+  background-image: url('./img/bg.png');
+  background-position: center;
+  background-size: cover;
+  margin:0 auto;
+  padding:0 auto;
+}

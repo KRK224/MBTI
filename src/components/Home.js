@@ -1,11 +1,17 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import styled from 'styled-components';
+
+const HomeBlock = styled.div`
+
+`;
+
 
 const Home =() =>{
   return(
-    <div>
+    <HomeBlock>
       Home 화면
-    </div>
+    </HomeBlock>
   )
 }
 

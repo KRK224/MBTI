@@ -5,16 +5,21 @@ import {NavLink} from 'react-router-dom';
 import { useDispatch } from 'react-redux';
 import { initialize_answer } from '../../modules/answer';
 import { initialize_ques } from '../../modules/questions';
+import { initialize_result } from '../../modules/result';
 
 const HeaderBlock = styled.div`
-  padding: 1rem;
+  margin: 0;
+  padding: 0.5rem;
   width: 100%;
   display: flex;
   justify-content: space-between;
   align-items: center;
+  background-color:#eeeeee;
 
   .home-logo {
     font-size: 1.3rem;
+    margin-left: 0.5rem;
+    
   }
 `;
 
@@ -24,9 +29,11 @@ const activeStyle ={
 
 const Header =() =>{
   const dispatch = useDispatch();
+  
   const initialize = useCallback(()=>{
     dispatch(initialize_answer());
     dispatch(initialize_ques());
+    dispatch(initialize_result());
   }, [dispatch])
   return (
     <HeaderBlock>
@@ -36,7 +43,7 @@ const Header =() =>{
         </NavLink>
       </div>
       <div>
-        나와 어울리는 연예인 찾기
+        나와 잘 맞는 연예인은?? (남자편)
       </div>
       <div>
 
