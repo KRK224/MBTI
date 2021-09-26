@@ -52,27 +52,27 @@ const initState = {
     },
     {
       idx: 3,
-      type: 'EvsI',
-      query: 'EvsI 질문입니다.',
+      type: 'NvsS',
+      query: 'NvsS 질문입니다.',
       fstAnswer: {
-        text:'E', 
+        text:'N', 
         isClicked: false,
       },
       sndAnswer: {
-        text: 'I',
+        text: 'S',
         isClicked: false,
       },
     },
     {
       idx: 4,
-      type: 'EvsI',
-      query: 'EvsI 질문입니다.',
+      type: 'NvsS',
+      query: 'NvsS 질문입니다.',
       fstAnswer: {
-        text:'E', 
+        text:'N', 
         isClicked: false,
       },
       sndAnswer: {
-        text: 'I',
+        text: 'S',
         isClicked: false,
       },
     },
