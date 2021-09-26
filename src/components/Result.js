@@ -11,10 +11,10 @@ const Result = ({resultType})=>{
   return(
     <ResultBlock>
       <div>
-        `내 타입은 ${resultType.type}`
+        내 타입은 {resultType.type}
       </div>
       <div>
-        `내용은 ${resultType.text}`
+        내용은 {resultType.text}
       </div>
     </ResultBlock>
   )

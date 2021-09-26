@@ -121,7 +121,7 @@ const AnswerBtn = styled.button`
 // `;
 
 
-const QuestionTemplate = ({ question, questions, fstClicked, sndClicked, calcResult }) => {
+const QuestionTemplate = ({ question, questions, fstClicked, sndClicked, calcAnswer }) => {
   return (
     <QuestionTemplateBlock>
       <div className='progressBtn'>
@@ -156,8 +156,8 @@ const QuestionTemplate = ({ question, questions, fstClicked, sndClicked, calcRes
         {question.idx ===11?
           <div className="btnAndResult">
             <Link to='/result' style={{textDecoration:'none'}}>
-              <AnswerBtn className="fstAnswer" isClicked={question.fstAnswer.isClicked} idx={question.idx} onClick={()=>{fstClicked(); calcResult(questions);}}>{question.fstAnswer.text}</AnswerBtn>
-              <AnswerBtn className="sndAnser" isClicked={question.sndAnswer.isClicked} idx={question.idx} onClick={()=>{sndClicked(); calcResult(questions);}}>{question.sndAnswer.text}</AnswerBtn>
+              <AnswerBtn className="fstAnswer" isClicked={question.fstAnswer.isClicked} idx={question.idx} onClick={()=>{fstClicked(); calcAnswer(questions);}}>{question.fstAnswer.text}</AnswerBtn>
+              <AnswerBtn className="sndAnser" isClicked={question.sndAnswer.isClicked} idx={question.idx} onClick={()=>{sndClicked(); calcAnswer(questions);}}>{question.sndAnswer.text}</AnswerBtn>
             </Link>
             {/* <GetResultBtn isClicked={question.fstAnswer.isClicked || question.sndAnswer.isClicked}>결과 보기</GetResultBtn> */}
           </div>

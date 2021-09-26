@@ -3,16 +3,18 @@ import {useSelector, useDispatch } from 'react-redux';
 import QuestionTemplate from '../components/QuestionTemplate';
 import { fstClicked, sndClicked } from '../modules/questions';
 import { eincrease, nincrease, tincrease, jincrease, toggleLoading } from '../modules/answer';
+import { decideType } from '../modules/result';
 
 const QuestionContainer = ({match}) =>{
   const questions = useSelector(state=>state.questions.questions);
+  const answer = useSelector(state=>state.answer);
   const dispatch = useDispatch();
   const currentIdx = parseInt(match.params.num)
   const currentQues = questions[currentIdx];
-  const fstClick = useCallback(()=>dispatch(fstClicked(currentIdx)), [dispatch, match]);
-  const sndClick = useCallback(()=>dispatch(sndClicked(currentIdx)), [dispatch, match]);
+  const fstClick = useCallback(()=>dispatch(fstClicked(currentIdx)), [dispatch, currentIdx]);
+  const sndClick = useCallback(()=>dispatch(sndClicked(currentIdx)), [dispatch, currentIdx]);
   
-  const calcResult = useCallback((questions) => {
+  const calcAnswer = useCallback((questions) => {
     
     dispatch(toggleLoading());
     console.log('결과지 계산 시작합니다.');
@@ -45,7 +47,8 @@ const QuestionContainer = ({match}) =>{
       }
     }));
     dispatch(toggleLoading());
-    console.log('결과지 계산이 종료되었습니다.');   
+    console.log('결과지 계산이 종료되었습니다.');
+
   },
     [dispatch, questions]
   );
@@ -56,7 +59,7 @@ const QuestionContainer = ({match}) =>{
       questions={questions}
       fstClicked={fstClick}
       sndClicked={sndClick}
-      calcResult={calcResult}
+      calcAnswer={calcAnswer}
     />
   )
 

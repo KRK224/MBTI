@@ -4,17 +4,24 @@ import produce from 'immer';
 const DECIDETYPE = 'result/DECIDETYPE';
 const INITIALIZE = 'result/INITIALIZE';
 
-export const decideType = createAction(DECIDETYPE, answerState =>({
-  EvsI: answerState.EvsI > 1? 'E': 'I',
-  NvsS: answerState.NvsS > 1? 'N': 'S',
-  TvsF: answerState.TvsF > 1? 'T': 'F',
-  JvsP: answerState.JvsP > 1? 'J': 'P',
-}));
+export const decideType = createAction(DECIDETYPE, answerState => {
+  const {EvsI: isE, NvsS: isN, TvsF: isT, JvsP: isJ} = answerState;
+  console.log(isE);
+  const EvsI = isE > 1? 'E': 'I';
+  const NvsS = isN > 1? 'N': 'S';
+  const TvsF = isT > 1? 'T': 'F';
+  const JvsP = isJ > 1? 'J': 'P';
+  const resultType = EvsI+NvsS+TvsF+JvsP
+  console.log(resultType);
+  return resultType;
+}
+
+);
 
 export const initialize_result = createAction(INITIALIZE);
 
 const initState ={
-  resultType: '',
+  resultType: 'ISTJ',
   typeList:[
     {
       type:'ISTJ',
@@ -100,7 +107,7 @@ const initState ={
 };
 
 const result = handleActions({
-  [DECIDETYPE]: (state, {payload: answerState})=>({...state, resultType: answerState.EvsI+answerState.NvsS+answerState.TvsF+answerState.JvsP}),
+  [DECIDETYPE]: (state, action)=>({...state, resultType: action.payload}),
   [INITIALIZE]: () => produce(initState, draft=>draft),
 },
   initState,  
