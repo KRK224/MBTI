@@ -10,7 +10,11 @@ const QuestionTemplateBlock = styled.div`
   margin: 2rem;
   
   .progressBar {
-    margin: 1rem 0 ;
+    margin: 1rem 0;
+  }
+
+  .progress-bar {
+    background-color: #9357a9;
   }
 
   .queryBody {
@@ -19,10 +23,11 @@ const QuestionTemplateBlock = styled.div`
     align-items: center;
 
     .queryText {
-      width: 80%;
-      padding: 24px;
+      word-break: keep-all;
+      white-space: pre-wrap;
+      width: 100%;
+      padding: 12px;
       text-align: center;
-      word-break: break-all;
     }
     
   }
@@ -32,8 +37,9 @@ const QuestionTemplateBlock = styled.div`
     justify-content: space-between;
   }
 
-  .btnAndResult {
-    width: 80%;
+  .btnForAnswer {
+    white-space: pre-wrap;
+    width: 100%;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -81,7 +87,7 @@ const AnswerBtn = styled.button`
   border-radius: 5px;
   margin-top: 1rem;
   background-color: #f1f3f8;
-  word-break: break-all;
+  word-break: keep-all;
   
   &:hover {
     font-weight: bold;
@@ -149,12 +155,12 @@ const QuestionTemplate = ({ question, questions, fstClicked, sndClicked, calcAns
         
       </div>
       <div className="progressBar">
-        <ProgressBar animated now={question.idx * 9.5} />
+        <ProgressBar now={question.idx * 9.5} />
       </div>
       <div className="queryBody">
         <div className="queryText">{question.query}</div>
         {question.idx ===11?
-          <div className="btnAndResult">
+          <div className="btnForAnswer">
             <Link to='/result' style={{textDecoration:'none'}}>
               <AnswerBtn className="fstAnswer" isClicked={question.fstAnswer.isClicked} idx={question.idx} onClick={()=>{fstClicked(); calcAnswer(questions);}}>{question.fstAnswer.text}</AnswerBtn>
               <AnswerBtn className="sndAnser" isClicked={question.sndAnswer.isClicked} idx={question.idx} onClick={()=>{sndClicked(); calcAnswer(questions);}}>{question.sndAnswer.text}</AnswerBtn>

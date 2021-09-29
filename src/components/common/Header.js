@@ -35,6 +35,7 @@ const Header =() =>{
     dispatch(initialize_ques());
     dispatch(initialize_result());
   }, [dispatch])
+
   return (
     <HeaderBlock>
       <div className="home-logo">
@@ -43,7 +44,7 @@ const Header =() =>{
         </NavLink>
       </div>
       <div>
-        나와 잘 맞는 연예인은?? (남자편)
+        나와 잘 맞는 연예인은? (남자편)
       </div>
       <div>
 

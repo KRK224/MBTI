@@ -6,20 +6,15 @@ import Home from './components/Home';
 import Questions from './components/Questions';
 import ResultContainer from './containers/ResultContainer';
 import styled from 'styled-components';
-import bg from './img/bg.png';
 
 const AppBlock = styled.div`
-  /* background-image: url(${bg});
-  background-position: center;
-  background-size: 100% 100%;
-  height: 100%;
-  background-repeat:no-repeat; */
+  
 `;
 
 const App = () =>{
   return(
     <AppBlock>
-      <Header />
+      <Route path='/ques' component={Header} />
       <Responsive>
         <Route path="/" component={Home} exact={true}/>
         <Route path="/ques" component={Questions} />
