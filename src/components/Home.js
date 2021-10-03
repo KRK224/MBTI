@@ -46,7 +46,7 @@ const HomeBlock = styled.div`
   }
 
   .startBtn {
-    margin-top: 2rem;
+    margin: 2rem auto;
   }
 `;
 

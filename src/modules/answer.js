@@ -22,7 +22,6 @@ const initState = {
   NvsS: 0,
   TvsF: 0,
   JvsP: 0,
-  loading: false,
 };
 
 const answer = handleActions({
@@ -31,7 +30,6 @@ const answer = handleActions({
   [TINCREASE]: (state) => ({...state, TvsF: state.TvsF + 1}),
   [JINCREASE]: (state) =>({...state, JvsP: state.JvsP + 1}),
   [INITIALIZE]: () => ({...initState}),
-  [TOGGLELOADING]: (state) =>({...state, loading: !state.loading}),
 },
   initState
 );

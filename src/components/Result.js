@@ -1,9 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
 
-
-
-
 const ResultBlock = styled.div`
   width: 80%;
   height: 100vh;
@@ -17,8 +14,10 @@ const ResultBlock = styled.div`
 
   .header {
     margin-top: 2rem;
-    font-size: 2rem;
-    font-weight: bold;
+    .headerIntro {
+      
+    }
+
   }
 
   .imgContainer {
@@ -49,21 +48,35 @@ const ResultBlock = styled.div`
 `;
 
 
-const Result = ({resultType})=>{
-  return(
+const Result = ({ resultType }) => {
+  console.log('현재 resultType 상태는:')
+  console.log(resultType);
+  const textList = resultType.text.map((text,index)=>{
+    return (<li key={index}>{text}</li>)
+  })
+  console.log(textList);
+  return (
     <ResultBlock>
-      <div>당신에게 잘 맞는 연예인은...</div>
-      <div className='header'>
-        {resultType.header}
+      <div className="header">
+        <div className='headerIntro'>당신과 잘 맞는 연예인은...</div>
+        <div className="resultHeader">{resultType.header}</div>
+      </div>     
       <div className="imgContainer">
-        <img src={resultType.picPath} alt="혁이형" />
-      </div>
-      </div>
-      <div className='content'>
-        {resultType.text}
+          <img src={resultType.picPath} alt="인물사진" />
+      </div>      
+      <div className="content">
+        <div className="typeDef">
+          {`${resultType.type}인 당신은 ${resultType.celebrity}와 잘 맞아요`} <br/>
+          {`${resultType.celebrity}의 특성은...`}
+        </div>
+        <div className="text">
+          <ul>
+            {textList}
+          </ul>
+        </div>
       </div>
     </ResultBlock>
-  )
-}
+  );
+};
 
 export default Result;

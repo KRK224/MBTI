@@ -3,15 +3,19 @@ import { useSelector, useDispatch } from 'react-redux';
 // import { decideType } from '../modules/result';
 import Result from '../components/Result';
 import { decideType } from '../modules/result';
-
+import { startLoading, finishLoading } from '../modules/loading';
 
 const ResultContainer = ()=>{
   const answer = useSelector(state=>state.answer);
   const result = useSelector(state=>state.result);
+  const loading = useSelector(state=>state.loading);
+
+
   const dispatch = useDispatch();
     
   useEffect(()=>{
-    if(answer.loading){
+    
+    if(loading.answer){
       console.log('loading중입니다...');
     } else{
       console.log('결과가 나왔습니다.');
@@ -21,11 +25,12 @@ const ResultContainer = ()=>{
       const JvsP = answer.JvsP > 1 ? 'J' : 'P';
       const resultType = EvsI+NvsS+TvsF+JvsP;
       dispatch(decideType(resultType));
+      dispatch(finishLoading('result'));
     }
   },
-    [dispatch, answer]
+    [dispatch, answer, ]
   );
-  if(answer.loading){
+  if(loading.result){
     return(
       <div>
         로딩 중...

@@ -3,7 +3,7 @@ import {useSelector, useDispatch } from 'react-redux';
 import QuestionTemplate from '../components/QuestionTemplate';
 import { fstClicked, sndClicked } from '../modules/questions';
 import { eincrease, nincrease, tincrease, jincrease, toggleLoading } from '../modules/answer';
-// import { decideType } from '../modules/result';
+import { startLoading, finishLoading } from '../modules/loading';
 
 const QuestionContainer = ({match}) =>{
   const questions = useSelector(state=>state.questions.questions);
@@ -16,7 +16,7 @@ const QuestionContainer = ({match}) =>{
   
   const calcAnswer = useCallback((questions) => {
     
-    dispatch(toggleLoading());
+    dispatch(startLoading('answer'))
     console.log('결과지 계산 시작합니다.');
 
     questions.forEach(((q, idx)=>{
@@ -46,9 +46,9 @@ const QuestionContainer = ({match}) =>{
           console.log(`${idx}번째의 문제의 타입이 일치하지 않습니다.`);
       }
     }));
-    dispatch(toggleLoading());
+    dispatch(finishLoading('answer'));
     console.log('결과지 계산이 종료되었습니다.');
-
+    dispatch(startLoading('result'));
   },
     [dispatch, questions]
   );
