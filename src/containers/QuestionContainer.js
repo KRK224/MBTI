@@ -3,11 +3,11 @@ import {useSelector, useDispatch } from 'react-redux';
 import QuestionTemplate from '../components/QuestionTemplate';
 import { fstClicked, sndClicked } from '../modules/questions';
 import { eincrease, nincrease, tincrease, jincrease, toggleLoading } from '../modules/answer';
-import { decideType } from '../modules/result';
+// import { decideType } from '../modules/result';
 
 const QuestionContainer = ({match}) =>{
   const questions = useSelector(state=>state.questions.questions);
-  const answer = useSelector(state=>state.answer);
+  // const answer = useSelector(state=>state.answer);
   const dispatch = useDispatch();
   const currentIdx = parseInt(match.params.num)
   const currentQues = questions[currentIdx];

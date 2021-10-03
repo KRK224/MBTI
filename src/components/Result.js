@@ -24,15 +24,24 @@ const ResultBlock = styled.div`
   .imgContainer {
     margin-top: 2rem;
     img {
-      width: 80%;
-      border-radius: 10px;
+      border-radius: 2rem;
+      @media (max-width: 768px){
+        width: 100%;
+      }
+
+      @media (max-width: 1024px){
+        width: 256px;
+      }
+      @media (min-width: 1024px){
+        width: 50%;
+      }
+
+      
     }
   }
 
   .content {
     margin: 0 2rem;
-    border: 2px solid black;
-    border-radius: 5px;
     margin-top: 2rem;
     white-space: pre-wrap;
     word-break: keep-all;

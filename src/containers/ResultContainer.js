@@ -1,4 +1,4 @@
-import React, {useCallback, useEffect} from 'react';
+import React, {useEffect} from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 // import { decideType } from '../modules/result';
 import Result from '../components/Result';
@@ -23,7 +23,7 @@ const ResultContainer = ()=>{
       dispatch(decideType(resultType));
     }
   },
-    [answer]
+    [dispatch, answer]
   );
   if(answer.loading){
     return(
