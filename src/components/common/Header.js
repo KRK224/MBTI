@@ -18,8 +18,11 @@ const HeaderBlock = styled.div`
 
   .home-logo {
     font-size: 1.3rem;
-    margin-left: 0.5rem;
-    
+    margin-left: 0.5rem; 
+  }
+
+  .headerText {
+    font-family: 'SBAggroB';
   }
 `;
 
@@ -43,7 +46,7 @@ const Header =() =>{
           <IoMdHome />
         </NavLink>
       </div>
-      <div>
+      <div className="headerText">
         나와 잘 맞는 연예인은? (남자편)
       </div>
       <div>

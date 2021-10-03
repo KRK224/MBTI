@@ -2,48 +2,65 @@ import React from 'react';
 import styled from 'styled-components';
 
 const ResultBlock = styled.div`
-  width: 80%;
-  height: 100vh;
-  margin-left: auto;
-  margin-right: auto;
-  margin-top: 4rem;
-  
-  border-radius: 5px;
-  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 3rem auto;
   text-align: center;
+  width: 100%;
 
   .header {
-    margin-top: 2rem;
+    margin-top: 3rem;
     .headerIntro {
-      
+      font-size: 1rem;
     }
-
+    .resultHeader {
+      margin-top: 2rem;
+      font-size: 1.5rem;
+      font-weight: bold;
+    }
   }
 
   .imgContainer {
-    margin-top: 2rem;
+    margin: 2rem auto;
+    @media (max-width: 768px) {
+      width: 100%;
+    }
+    @media (max-width: 1024px) {
+      width: 256px;
+    }
+    @media (min-width: 1024px) {
+      width: 50%;
+    }
     img {
       border-radius: 2rem;
-      @media (max-width: 768px){
-        width: 100%;
-      }
-
-      @media (max-width: 1024px){
-        width: 256px;
-      }
-      @media (min-width: 1024px){
-        width: 50%;
-      }
-
-      
+      width: 100%;
     }
   }
 
   .content {
-    margin: 0 2rem;
-    margin-top: 2rem;
     white-space: pre-wrap;
     word-break: keep-all;
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+    
+    .typeDef {
+      margin: 1rem;
+      div + div {
+        margin: 5rem 0 0;
+        text-align: center;
+      }
+    }
+    .text {
+      padding: 1rem;
+      width: 70%;
+      text-align: left;
+      li+li {
+        margin-top: 1.5rem;
+      }
+    }
   }
 `;
 
@@ -66,14 +83,20 @@ const Result = ({ resultType }) => {
       </div>      
       <div className="content">
         <div className="typeDef">
-          {`${resultType.type}인 당신은 ${resultType.celebrity}와 잘 맞아요`} <br/>
-          {`${resultType.celebrity}의 특성은...`}
+          <div><b>{`${resultType.type}인 `}</b>당신은 <b>{`${resultType.celebrity}`}</b> 잘 맞아요 </div>
+          <div><b>그의 특성은...</b></div>
         </div>
         <div className="text">
           <ul>
             {textList}
           </ul>
         </div>
+      </div>
+      <div className="sharing">
+
+      </div>
+      <div className="returnHome">
+
       </div>
     </ResultBlock>
   );

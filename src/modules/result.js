@@ -16,7 +16,7 @@ const initState ={
       type:'ISFJ',
       picPath: '',
       header: '열정! 열정! 열정!',
-      celebrity: 'ESTP 김영남',
+      celebrity: 'ESTP 김영남과',
       text: [
         '타고난 해결사로써 문제를 해결하는 능력이 타의 추종을 불허합니다. 그러나 타고난 말썽꾸러기로써 문제를 유발하는 능력 또한 타의 추종을 불허합니다.',
         '삶을 즐기며 살며, 스릴을 좋아합니다.',
@@ -28,7 +28,7 @@ const initState ={
       type:'ISTJ',
       picPath: '',
       header: '어? 이쁘다',
-      celebrity: 'ESFP 최준',
+      celebrity: 'ESFP 최준과',
       text: [
         '자유로운 영혼의 연예인, 사교적인 유형',
         '사교적이고 활동적이며 수용력이 강하고 친절하며 낙천적입니다.',
@@ -41,7 +41,7 @@ const initState ={
       type:'INFJ',
       picPath: '',
       header: '지금까지 열심히 했잖아 내가, 어?!',
-      celebrity: 'ENTP 쿨제이',
+      celebrity: 'ENTP 쿨제이와',
       text: [
         '뜨거운 논쟁을 즐기는 변론가, 발명가형',
         '본인의 신념을 굽히면서까지 타인과의 관계를 우선시하지 않기에 겉으로 차갑고 무심해 보일 수도 있습니다.',
@@ -54,7 +54,7 @@ const initState ={
       type:'INTJ',
       picPath: '',
       header: '어른이 이야기하면 임마!',
-      celebrity: 'ENFP 이택조',
+      celebrity: 'ENFP 이택조와',
       text: [
         '재기발랄한 활동가, 스파크형',
         '감정이 얼굴에 잘 들어나며, 새로운 사람 만나기를 좋아합니다.',
@@ -67,7 +67,7 @@ const initState ={
       type:'ISTP',
       picPath: '',
       header: '야 왔으면 인사를 해',
-      celebrity: 'ESTJ 배용남',
+      celebrity: 'ESTJ 배용남과',
       text: [
         '엄격한 관리자, 사업가형',
         '현실적, 구체적이고 사실적이며 활동을 조직화하고 주도해 나가는 것을 좋아합니다.',
@@ -80,7 +80,7 @@ const initState ={
       type:'ISFP',
       picPath: '',
       header: '중고차 필요할 땐? 차차차 차진석!',
-      celebrity: 'ESFJ 차진석',
+      celebrity: 'ESFJ 차진석과',
       text: [
         '사교적인 외교관, 친선도모형',
         '타인의 인정을 받는 것에 아주 민감합니다.',
@@ -93,7 +93,7 @@ const initState ={
       type:'INFP',
       picPath: '',
       header: '안녕하세요! 뉴라이프 팀드림 디스트리뷰터 방재호입니다.',
-      celebrity: 'ENTJ 방재호',
+      celebrity: 'ENTJ 방재호와',
       text: [
         '대담한 통솔자, 지도자형',
         '열성이 많으며 자기 주장이 강하면서 단호하고 지도력과 통솔력이 있습니다.',
@@ -106,7 +106,7 @@ const initState ={
       type:'INTP',
       picPath: '',
       header: '야 왔으면 인사를 해',
-      celebrity: 'ESTJ 배용남',
+      celebrity: 'ESTJ 배용남과',
       text: [
         '엄격한 관리자, 사업가형',
         '현실적, 구체적이고 사실적이며 활동을 조직화하고 주도해 나가는 것을 좋아합니다.',
@@ -119,7 +119,7 @@ const initState ={
       type:'ESTP',
       picPath: '',
       header: 'If You Marry Me, Cooking is My Job.',
-      celebrity: 'ISFJ 배용길',
+      celebrity: 'ISFJ 배용길과',
       text: [
         '용감한 수호자, 실용적인 조력가',
         '조용하고 차분하며 따뜻하고 친근합니다. 책임감과 인내력 또한 매우 강합니다.',
@@ -132,7 +132,7 @@ const initState ={
       type:'ESFP',
       picPath: '',
       header: 'If You Marry Me, Cooking is My Job.',
-      celebrity: 'ISFJ 배용길',
+      celebrity: 'ISFJ 배용길과',
       text: [
         '용감한 수호자, 실용적인 조력가',
         '조용하고 차분하며 따뜻하고 친근합니다. 책임감과 인내력 또한 매우 강합니다.',
@@ -145,7 +145,7 @@ const initState ={
       type:'ENFP',
       picPath: '',
       header: '재벌 처음 봐요?',
-      celebrity: 'INTJ 이호창',
+      celebrity: 'INTJ 이호창과',
       text: [
         '용의주도한 전략가형',
         '아무에게 시간과 에너지를 투자하는 편은 아니므로, 단순히 지인에게는 미지의 인물로 보여요.',
@@ -158,7 +158,7 @@ const initState ={
       type:'ENTP',
       picPath: '',
       header: '자..그.. 만나서... 반갑습니다.',
-      celebrity: 'INFJ 정광용',
+      celebrity: 'INFJ 광용쌤과',
       text: [
         '통찰력 있는 선지자, 예언자형',
         '인내심이 많고 통찰력과 직관력이 뛰어나며 화합을 추구합니다.',
@@ -171,7 +171,7 @@ const initState ={
       type:'ESTJ',
       picPath: '',
       header: 'skrr~ suction krr!',
-      celebrity: 'ISTP 임플란티드 키드',
+      celebrity: 'ISTP 임플란티드 키드와',
       text: [
         '논리적인 실용주의자, 백과사전형',
         '틀에 박히고 통념적인 생활을 싫어합니다.',
@@ -184,7 +184,7 @@ const initState ={
       type:'ESFJ',
       picPath: '',
       header: '어, 왔니?',
-      celebrity: 'ISFP 혁이형',
+      celebrity: 'ISFP 혁이형과',
       text: [
         '호기심 많은 예술가, 성인군자형',
         '말없이 다정하고 온화하며 사람들에게 친절하고 상대방을 잘 알게 될 때까지 내면의 모습이 잘 보이지 않습니다.',
@@ -197,7 +197,7 @@ const initState ={
       type:'ENFJ',
       picPath: '',
       header: '어, 왔니?',
-      celebrity: 'ISFP 혁이형',
+      celebrity: 'ISFP 혁이형과',
       text: [
         '호기심 많은 예술가, 성인군자형',
         '말없이 다정하고 온화하며 사람들에게 친절하고 상대방을 잘 알게 될 때까지 내면의 모습이 잘 보이지 않습니다.',
@@ -210,7 +210,7 @@ const initState ={
       type:'ENTJ',
       picPath: '',
       header: '하이 에이치아이~ 매드몬스터! 제이호야~',
-      celebrity: 'INFP 제이호',
+      celebrity: 'INFP 제이호와',
       text: [
         '열정적인 중재자, 잔 다르크형',
         '이상주의자로서, 자신이 지향하는 이상에 대해서는 정열적인 신념을 지니고 있습니다.',

@@ -17,21 +17,20 @@ const HomeBlock = styled.div`
   .header {
     margin-top: 3rem;
     .subHeader {
-      font-size: 0.8rem;
-      margin-bottom: 0.3rem;
+      font-family: 'SBAggroL';
+      font-size: 1rem;
     }
     .majorHeader {
-      font-size: 1.2rem;
+      font-family: 'SBAggroB';
+      margin-top: 1rem;
+      font-size: 2rem;
       font-weight: bold;
     }
   }
+
   .imgContainer {
     margin-top: 3rem;
-    
-    img {
-      border-radius: 2rem;
-      
-      @media (max-width: 768px){
+    @media (max-width: 768px){
         width: 100%;
       }
 
@@ -41,7 +40,10 @@ const HomeBlock = styled.div`
       @media (min-width: 1024px){
         width: 50%;
       }
-        
+
+    img {
+      border-radius: 2rem;
+      width: 100%;        
     }
   }
 
@@ -63,7 +65,7 @@ const Home =() =>{
         </div>
       </div>
       <div className="imgContainer">
-        <img src="/img/Home/v.png" alt="홈화면" />
+        <img src="/img/Home/bts_JK.png" alt="홈화면" />
       </div>
       <div className="startBtn">
         <Link to='/ques/0' style={{textDecoration:'none'}}>
