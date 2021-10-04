@@ -3,6 +3,13 @@ import answer from './answer';
 import questions from './questions';
 import result from './result';
 import loading from './loading';
+import storage from 'redux-persist/lib/storage';
+import { persistReducer } from 'redux-persist';
+
+const persistConfig = {
+  key: 'root',
+  storage,
+};
 
 const rootReducer = combineReducers({
   answer,
@@ -11,4 +18,6 @@ const rootReducer = combineReducers({
   loading,
 });
 
-export default rootReducer;
+const persistedReducer = persistReducer(persistConfig, rootReducer);
+
+export default persistedReducer;
