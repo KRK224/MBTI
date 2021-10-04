@@ -3,21 +3,29 @@ import { useSelector, useDispatch } from 'react-redux';
 // import { decideType } from '../modules/result';
 import Result from '../components/Result';
 import { decideType } from '../modules/result';
-import { startLoading, finishLoading } from '../modules/loading';
+import { finishLoading } from '../modules/loading';
+import styled from 'styled-components';
+import { useScript } from '../hooks/hooks';
+import { KakaoAppKey } from '../config';
+
+
+const LoadingBlock = styled.div`
+  
+`;
 
 const ResultContainer = ()=>{
   const answer = useSelector(state=>state.answer);
   const result = useSelector(state=>state.result);
   const loading = useSelector(state=>state.loading);
-
-
   const dispatch = useDispatch();
+
+  const status = useScript("https://developers.kakao.com/sdk/js/kakao.js");
     
   useEffect(()=>{
     
     if(loading.answer){
       console.log('loading중입니다...');
-    } else{
+    } else if(loading.result){
       console.log('결과가 나왔습니다.');
       const EvsI = answer.EvsI > 1 ? 'E' : 'I';
       const NvsS = answer.NvsS > 1 ? 'N' : 'S';
@@ -27,8 +35,14 @@ const ResultContainer = ()=>{
       dispatch(decideType(resultType));
       dispatch(finishLoading('result'));
     }
+
+    if(status === 'ready' &&window.Kakao) {
+      if(!window.Kakao.isInitialized()){
+        window.Kakao.init(KakaoAppKey);
+    }
+  }
   },
-    [dispatch, answer, ]
+    [dispatch, answer, status]
   );
   if(loading.result){
     return(

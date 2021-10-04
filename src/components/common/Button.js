@@ -1,5 +1,6 @@
 import React from 'react';
 import styled, {css} from 'styled-components';
+import '../../App.css';
 
 
 const AnswerBtn = styled.button`
@@ -11,6 +12,7 @@ const AnswerBtn = styled.button`
   margin-top: 1rem;
   background-color: #f1f3f8;
   word-break: keep-all;
+  font-family: 'SBAggroL';
   
   &:hover {
     font-weight: bold;

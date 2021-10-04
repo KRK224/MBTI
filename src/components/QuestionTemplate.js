@@ -9,6 +9,8 @@ import Button from './common/Button';
 
 const QuestionTemplateBlock = styled.div`
   margin: 5rem;
+  font-family: 'SBAggroL';
+  font-weight: bold;
 
   .progressBtn {
     display: flex;
