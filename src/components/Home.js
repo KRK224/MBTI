@@ -1,7 +1,11 @@
-import React from "react";
+import React, {useCallback} from "react";
+import { useDispatch } from "react-redux";
 import { Link } from "react-router-dom";
 import styled from 'styled-components';
 import Button from './common/Button';
+import { initialize_answer } from '../modules/answer';
+import { initialize_ques } from '../modules/questions';
+import { initialize_result } from '../modules/result';
 
 
 const HomeBlock = styled.div`
@@ -54,6 +58,15 @@ const HomeBlock = styled.div`
 
 
 const Home =() =>{
+
+  const dispatch = useDispatch();
+
+  const initialize = useCallback(()=>{
+    dispatch(initialize_answer());
+    dispatch(initialize_ques());
+    dispatch(initialize_result());
+  }, [dispatch])
+
   return(
     <HomeBlock>
       <div className="header">
@@ -69,7 +82,7 @@ const Home =() =>{
       </div>
       <div className="startBtn">
         <Link to='/ques/0' style={{textDecoration:'none'}}>
-          <Button>테스트 시작하기</Button>
+          <Button onClick={initialize}>테스트 시작하기</Button>
         </Link>
       </div>
     </HomeBlock>
