@@ -6,7 +6,6 @@ import { decideType } from '../modules/result';
 import { finishLoading } from '../modules/loading';
 import styled from 'styled-components';
 import { useScript } from '../hooks/hooks';
-import { KakaoAppKey } from '../config';
 
 
 const LoadingBlock = styled.div`
@@ -38,7 +37,7 @@ const ResultContainer = ()=>{
 
     if(status === 'ready' &&window.Kakao) {
       if(!window.Kakao.isInitialized()){
-        window.Kakao.init(KakaoAppKey);
+        window.Kakao.init(process.env.REACT_APP_KAppKey);
     }
   }
   },
