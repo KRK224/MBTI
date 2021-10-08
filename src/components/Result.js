@@ -154,16 +154,7 @@ const Result = ({ resultType }) => {
       requestUrl: currentUrl,
     });
   };
-
-
-  useEffect(()=>{
-    
-    const image = new Image();
-    image.src = resultType.picPath;
-    image.onload = () =>{
-      dispatch(finishLoading('img'));
-    }    
-  }, [])
+  
 
   if (loading.img) {
     return <Loading />
@@ -176,7 +167,7 @@ const Result = ({ resultType }) => {
         <div className="resultHeader">{resultType.header}</div>
       </div>     
       <div className="imgContainer">
-          <img src={resultType.picPath} alt="인물사진" />
+          <img src={resultType.picPath} alt="인물사진" onLoad={()=>{dispatch(finishLoading('img'))}}/>
       </div>      
       <div className="content">
         <div className="typeDef">
