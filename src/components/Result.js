@@ -1,4 +1,4 @@
-import React, {useCallback} from 'react';
+import React, {useCallback, useEffect} from 'react';
 import styled from 'styled-components';
 import { Link } from 'react-router-dom';
 import Button from './common/Button';
@@ -8,8 +8,8 @@ import { initialize_ques } from '../modules/questions';
 import { initialize_result } from '../modules/result';
 import { FacebookShareButton, FacebookIcon, TwitterShareButton, TwitterIcon } from 'react-share';
 import { CopyToClipboard } from 'react-copy-to-clipboard';
-import { finishLoading } from '../modules/loading';
-
+import loading, { startLoading, finishLoading } from '../modules/loading';
+import Loading from './common/Loading';
 
 
 const ResultBlock = styled.div`
@@ -130,12 +130,12 @@ const KakaoIcon = styled.img`
   border-radius: 50%;
 `;
 
+
 const Result = ({ resultType }) => {
 
   // console.log('현재 resultType 상태는:')
   // console.log(resultType);
   const dispatch = useDispatch();
-
   const textList = resultType.text.map((text,index)=>{
     return (<li key={index}>{text}</li>)
   })
@@ -155,6 +155,21 @@ const Result = ({ resultType }) => {
     });
   };
 
+
+  useEffect(()=>{
+    dispatch(startLoading('img'));
+    const image = new Image();
+    
+    image.src = resultType.picPath;
+    image.onload = () =>{
+      dispatch(finishLoading('img'));
+    }    
+  }, [])
+
+  if (loading.img) {
+    return <Loading />
+  }
+
   return (
     <ResultBlock>
       <div className="header">
@@ -162,7 +177,7 @@ const Result = ({ resultType }) => {
         <div className="resultHeader">{resultType.header}</div>
       </div>     
       <div className="imgContainer">
-          <img src={resultType.picPath} alt="인물사진" onLoad={()=>{dispatch(finishLoading('result'))}}/>
+          <img src={resultType.picPath} alt="인물사진" onLoad={()=>{dispatch(finishLoading('img'))}}/>
       </div>      
       <div className="content">
         <div className="typeDef">
