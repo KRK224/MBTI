@@ -144,7 +144,6 @@ const QuestionTemplate = ({ question, questions, fstClicked, sndClicked, calcAns
           <NextBtn disabled={true} idx={question.idx}><VscChevronRight /></NextBtn>
         }
       </div>
-
       <div className="progressBar">
         <ProgressBar now={question.idx * 9.5} />
       </div>

@@ -30,7 +30,7 @@ const ResultBlock = styled.div`
     .resultHeader {
       font-family: 'SBAggroB';
       margin-top: 2rem;
-      font-size: 1.7rem;
+      font-size: 1.5rem;
       font-weight: bold;
       word-break: keep-all;
       white-space: pre-wrap;

@@ -14,11 +14,15 @@ const AnswerBtn = styled.button`
   word-break: keep-all;
   font-family: 'SBAggroL';
   
-  &:hover {
+  @media (hover: hover) and (pointer: fine){
+    &:hover {
     font-weight: bold;
     color: white;
     background-color: black;
+    }
   }
+
+  
   ${props =>
     props.isClicked &&
     css`
