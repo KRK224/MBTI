@@ -1,4 +1,4 @@
-import React, {useEffect} from 'react';
+import React, {useEffect, Suspense} from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 // import { decideType } from '../modules/result';
 import Result from '../components/Result';
@@ -9,7 +9,27 @@ import { useScript } from '../hooks/hooks';
 
 
 const LoadingBlock = styled.div`
-  
+  margin: 3rem auto;
+  text-align: center;
+  font-size: 1rem;
+  font-family: 'SBAggroL';
+
+  .imgContainer {
+    margin: 2rem auto;
+    @media (max-width: 480px) {
+      width: 300px;
+    }
+    @media (min-width: 768px) {
+      width: 70%;
+    }
+
+    @media (min-width: 1024px) {
+      width: 50%;
+    }
+    img {
+      width: 100%;
+    }
+  }
 `;
 
 const ResultContainer = ()=>{
@@ -45,13 +65,25 @@ const ResultContainer = ()=>{
   );
   if(loading.result){
     return(
-      <div>
-        로딩 중...
-      </div>
+      <LoadingBlock>
+        <div className="imgContainer">
+          <img src="img/Loading.gif" alt="로딩중..." />
+        </div>
+        나와 잘 맞는 연예인 검색 중...
+      </LoadingBlock>
     )
     } else {
       return (
-        <Result resultType={result.resultType} />
+        <Suspense fallback={
+          <LoadingBlock>
+            <div className="imgContainer">
+              <img src="img/Loading.gif" alt="로딩중..." />
+            </div>
+            나와 잘 맞는 연예인 검색 중...
+        </LoadingBlock>
+        }>
+          <Result resultType={result.resultType} />
+        </Suspense>        
       )
     }
 };
