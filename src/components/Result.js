@@ -89,7 +89,7 @@ const ResultBlock = styled.div`
   }
 
   .returnHome {
-    margin-bottom: 2rem;
+    margin-bottom: 4rem;
   }
 
 `;
@@ -110,7 +110,7 @@ const URLShareButton = styled.button`
   border-radius: 50%50%;
   border: 0px;
   font-weight: 800;
-  font-size: 8px;
+  font-size: 12px;
   cursor: pointer;
   background-color:#4d2c91;
   text-align: center;
@@ -157,9 +157,8 @@ const Result = ({ resultType }) => {
 
 
   useEffect(()=>{
-    dispatch(startLoading('img'));
-    const image = new Image();
     
+    const image = new Image();
     image.src = resultType.picPath;
     image.onload = () =>{
       dispatch(finishLoading('img'));
@@ -177,7 +176,7 @@ const Result = ({ resultType }) => {
         <div className="resultHeader">{resultType.header}</div>
       </div>     
       <div className="imgContainer">
-          <img src={resultType.picPath} alt="인물사진" onLoad={()=>{dispatch(finishLoading('img'))}}/>
+          <img src={resultType.picPath} alt="인물사진" />
       </div>      
       <div className="content">
         <div className="typeDef">

@@ -3,7 +3,7 @@ import { useSelector, useDispatch } from 'react-redux';
 // import { decideType } from '../modules/result';
 import Result from '../components/Result';
 import { decideType } from '../modules/result';
-import { finishLoading } from '../modules/loading';
+import { startLoading, finishLoading } from '../modules/loading';
 import { useScript } from '../hooks/hooks';
 import Loading from '../components/common/Loading';
 
@@ -28,6 +28,7 @@ const ResultContainer = ()=>{
       const resultType = EvsI+NvsS+TvsF+JvsP;
       dispatch(decideType(resultType));
       dispatch(finishLoading('result'));
+      dispatch(startLoading('img'));
     }
 
     if(status === 'ready' &&window.Kakao) {
