@@ -116,9 +116,11 @@ const URLShareButton = styled.button`
   text-align: center;
   margin: 0;
   padding: 0;
-
-  &:hover {
-    background-color:#b085f5;
+  
+  @media (hover: hover) and (pointer: fine){
+    &:hover {
+      background-color:#b085f5;
+    }
   }
 `;
 
