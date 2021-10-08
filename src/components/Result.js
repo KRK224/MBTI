@@ -39,7 +39,7 @@ const ResultBlock = styled.div`
 
   .imgContainer {
     margin: 2rem auto;
-    @media (max-width: 768px) {
+    @media (max-width: 480px) {
       width: 300px;
     }
     @media (min-width: 768px) {
