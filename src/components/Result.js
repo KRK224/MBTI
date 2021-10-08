@@ -110,7 +110,7 @@ const URLShareButton = styled.button`
   border-radius: 50%50%;
   border: 0px;
   font-weight: 800;
-  font-size: 12px;
+  font-size: 16px;
   cursor: pointer;
   background-color:#4d2c91;
   text-align: center;
