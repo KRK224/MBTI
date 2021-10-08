@@ -34,9 +34,6 @@ const HomeBlock = styled.div`
 
   .imgContainer {
     margin-top: 3rem;
-    @media (max-width: 768px){
-        width: 100%;
-      }
 
       @media (max-width: 1024px){
         width: 256px;
@@ -78,7 +75,7 @@ const Home =() =>{
         </div>
       </div>
       <div className="imgContainer">
-        <img src="/img/Home/bts_JK.png" alt="홈화면" />
+        <img src="/img/Home/bts_JK-min.png" alt="홈화면" />
       </div>
       <div className="startBtn">
         <Link to='/ques/0' style={{textDecoration:'none'}}>

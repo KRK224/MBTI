@@ -4,7 +4,7 @@ import QuestionContainer from "../containers/QuestionContainer";
 import styled from "styled-components";
 
 const QuestionsBlock = styled.div`
-  
+  margin:0;
 `;
 
 const Questions = () => {

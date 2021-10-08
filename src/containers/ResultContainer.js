@@ -41,7 +41,7 @@ const ResultContainer = ()=>{
     }
   }
   },
-    [dispatch, answer, status]
+    [dispatch, answer, status, result]
   );
   if(loading.result){
     return(

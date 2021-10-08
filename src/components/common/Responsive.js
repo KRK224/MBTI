@@ -3,15 +3,17 @@ import styled from 'styled-components';
 
 const ResponsiveBlock = styled.div`
   padding: 0 1rem;
-  width: 50%;
-  margin: 0 auto;
+  width: 60%;
+  margin: 5rem auto;
 
   @media (max-width: 1024px) {
-    width: 768px;
+    margin: 3rem auto;
+    width: 90%;
   }
 
   @media (max-width: 768px) {
-    width: 100%;
+    width: 90%;
+    margin: 0 auto;
   }
 `;
 

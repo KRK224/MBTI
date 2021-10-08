@@ -8,9 +8,21 @@ import Button from './common/Button';
 
 
 const QuestionTemplateBlock = styled.div`
-  margin: 5rem;
+  margin-top: 1rem;
+  /* margin: 5rem auto;
+  width: 60%; */
   font-family: 'SBAggroL';
   font-weight: bold;
+
+  /* @media(max-width: 1024px) {
+    margin: 3rem auto;
+    width: 60%;
+  }
+
+  @media (max-width: 768px) {
+    width: 90%;
+    margin: 2rem auto;
+  } */
 
   .progressBtn {
     display: flex;
@@ -138,12 +150,16 @@ const QuestionTemplate = ({ question, questions, fstClicked, sndClicked, calcAns
       </div>
 
       <div className="queryBody">
-        <div className="queryText">{question.query}</div>
+        <div className="queryText">{question.query.split('\n').map(line=>{return(<span>{line}<br /></span>)})}</div>
         {question.idx ===11?
           <div className="btnForAnswer">
             <Link to='/result' style={{textDecoration:'none'}}>
-              <Button className="fstAnswer" isClicked={question.fstAnswer.isClicked} idx={question.idx} onClick={()=>{fstClicked(); calcAnswer(questions);}}>{question.fstAnswer.text}</Button>
-              <Button className="sndAnser" isClicked={question.sndAnswer.isClicked} idx={question.idx} onClick={()=>{sndClicked(); calcAnswer(questions);}}>{question.sndAnswer.text}</Button>
+              <Button className="fstAnswer" isClicked={question.fstAnswer.isClicked} idx={question.idx} onClick={()=>{fstClicked(); calcAnswer(questions);}}>
+                {question.fstAnswer.text}
+              </Button>
+              <Button className="sndAnser" isClicked={question.sndAnswer.isClicked} idx={question.idx} onClick={()=>{sndClicked(); calcAnswer(questions);}}>
+                {question.sndAnswer.text}
+              </Button>
             </Link>
             {/* <GetResultBtn isClicked={question.fstAnswer.isClicked || question.sndAnswer.isClicked}>결과 보기</GetResultBtn> */}
           </div>

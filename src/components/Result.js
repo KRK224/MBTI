@@ -16,7 +16,6 @@ const ResultBlock = styled.div`
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  margin: 3rem auto;
   text-align: center;
   width: 100%;
 
@@ -34,17 +33,19 @@ const ResultBlock = styled.div`
       font-size: 1.7rem;
       font-weight: bold;
       word-break: keep-all;
+      white-space: pre-wrap;
     }
   }
 
   .imgContainer {
     margin: 2rem auto;
     @media (max-width: 768px) {
-      width: 100%;
+      width: 300px;
     }
-    @media (max-width: 1024px) {
-      width: 256px;
+    @media (min-width: 768px) {
+      width: 70%;
     }
+
     @media (min-width: 1024px) {
       width: 50%;
     }
@@ -70,7 +71,7 @@ const ResultBlock = styled.div`
     }
     .text {
       padding: 1rem;
-      width: 70%;
+      width: 90%;
       text-align: left;
       li+li {
         margin-top: 1.5rem;

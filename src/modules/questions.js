@@ -53,9 +53,9 @@ const initState = {
     {
       idx: 3,
       type: 'NvsS',
-      query: '이제 좀 흥미로워지는 드라마에서 주인공이 느닷없이 죽어버렸다면',
+      query: '이제 좀 흥미로워지는 드라마에서 \n주인공이 느닷없이 죽어버렸다면',
       fstAnswer: {
-        text:'주인공 역을 맡은 배우의 건강 상태부터 작가의 정신 상태까지 원인을 고민해본다.', 
+        text:'주인공 역을 맡은 배우의 건강 상태부터 \n작가의 정신 상태까지 원인을 고민해본다.', 
         isClicked: false,
       },
       sndAnswer: {
@@ -68,7 +68,7 @@ const initState = {
       type: 'NvsS',
       query: '연예인의 인스타에 감성 넘치는 글이 올라왔다면',
       fstAnswer: {
-        text:'최근 그 연예인과 관련된 사건들을 떠올리며 상황을 유추해본다.', 
+        text:'최근 그 연예인과 관련된 사건들을 떠올리며 \n상황을 유추해본다.', 
         isClicked: false,
       },
       sndAnswer: {
@@ -79,20 +79,20 @@ const initState = {
     {
       idx: 5,
       type: 'NvsS',
-      query: '화제의 넷플릭스 드라마 첫 화를 보다가 신경 쓰이는 장면이 지나갔다면',
+      query: '화제의 넷플릭스 드라마 첫 화를 보다가 \n신경 쓰이는 장면이 지나갔다면',
       fstAnswer: {
         text:'다시 그 장면으로 돌아가 왜 신경 쓰였는지 확인한다.', 
         isClicked: false,
       },
       sndAnswer: {
-        text: '메인 스토리에 크게 영향을 미칠 것 같지 않다. 일단 계속 본다.',
+        text: '메인 스토리에 크게 영향을 미칠 것 같지 않다. \n일단 계속 본다.',
         isClicked: false,
       },
     },
     {
       idx: 6,
       type: 'TvsF',
-      query: '최애의 콘서트 1차 티켓팅 날, 나는 성공하고 함께 가기로 한 친구는 실패했다면',
+      query: '최애의 콘서트 1차 티켓팅 날, \n나는 성공하고 함께 가기로 한 친구는 실패했다면',
       fstAnswer: {
         text:'2차는 성공하자! 친구의 실패 원인을 분석한다.', 
         isClicked: false,
@@ -120,11 +120,11 @@ const initState = {
       type: 'TvsF',
       query: '역대급 콘서트 때문에 막차 시간이 얼마 안 남았다면',
       fstAnswer: {
-        text:'최단 거리에 있는 버스 정류장을 찾아 이동 시간을 계산한다.', 
+        text:'최단 거리에 있는 버스 정류장을 찾아 \n이동 시간을 계산한다.', 
         isClicked: false,
       },
       sndAnswer: {
-        text: '친구가 길을 잘 찾은 거 같다. 오늘 콘서트에서 좋았던 점을 이야기한다.',
+        text: '친구가 길을 잘 찾은 거 같다. \n오늘 콘서트에서 좋았던 점을 이야기한다.',
         isClicked: false,
       },
     },
@@ -144,7 +144,7 @@ const initState = {
     {
       idx: 10,
       type: 'JvsP',
-      query: '친구가 추천해준 드라마를 보려는데, 제법 스토리가 진행되어있다면',
+      query: '친구가 추천해준 드라마를 보려는데, \n제법 스토리가 진행됐다면',
       fstAnswer: {
         text:'앞부분에 중요한 장면이 있었던거 같다... 찾아본다.', 
         isClicked: false,

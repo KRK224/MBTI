@@ -92,7 +92,7 @@ const initState ={
     {
       type:'INFP',
       picPath: '/img/방재호/방재호.png',
-      header: '안녕하세요! 뉴라이프 팀드림 디스트리뷰터 방재호입니다.',
+      header: '안녕하세요! 뉴라이프 팀드림\n 디스트리뷰터 방재호입니다.',
       celebrity: 'ENTJ 방재호와',
       text: [
         '대담한 통솔자, 지도자형',
@@ -118,7 +118,7 @@ const initState ={
     {
       type:'ESTP',
       picPath: '/img/배용길/배용길.png',
-      header: 'If You Marry Me, Cooking is My Job.',
+      header: 'If You Marry Me,\n Cooking is My Job.',
       celebrity: 'ISFJ 배용길과',
       text: [
         '용감한 수호자, 실용적인 조력가',
@@ -130,8 +130,8 @@ const initState ={
     },
     {
       type:'ESFP',
-      picPath: '/img/배용길/배용길.jpg',
-      header: 'If You Marry Me, Cooking is My Job.',
+      picPath: '/img/배용길/배용길.png',
+      header: 'If You Marry Me,\n Cooking is My Job.',
       celebrity: 'ISFJ 배용길과',
       text: [
         '용감한 수호자, 실용적인 조력가',
@@ -209,7 +209,7 @@ const initState ={
     {
       type:'ENTJ',
       picPath: '/img/제이호/제이호.png',
-      header: '하이 에이치아이~ 매드몬스터! 제이호야~',
+      header: '하이 에이치아이~ 매드몬스터! \n 제이호야~',
       celebrity: 'INFP 제이호와',
       text: [
         '열정적인 중재자, 잔 다르크형',
