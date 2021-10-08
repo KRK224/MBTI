@@ -27,7 +27,7 @@ const HomeBlock = styled.div`
     .majorHeader {
       font-family: 'SBAggroB';
       margin-top: 1rem;
-      font-size: 2rem;
+      font-size: 1.5rem;
       font-weight: bold;
     }
   }

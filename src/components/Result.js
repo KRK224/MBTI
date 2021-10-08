@@ -112,6 +112,7 @@ const URLShareButton = styled.button`
   font-size: 1rem;
   cursor: pointer;
   background-color:#4d2c91;
+  text-align: center;
 
   &:hover {
     background-color:#b085f5;
