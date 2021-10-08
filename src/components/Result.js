@@ -8,6 +8,7 @@ import { initialize_ques } from '../modules/questions';
 import { initialize_result } from '../modules/result';
 import { FacebookShareButton, FacebookIcon, TwitterShareButton, TwitterIcon } from 'react-share';
 import { CopyToClipboard } from 'react-copy-to-clipboard';
+import { finishLoading } from '../modules/loading';
 
 
 
@@ -109,7 +110,7 @@ const URLShareButton = styled.button`
   border-radius: 50%50%;
   border: 0px;
   font-weight: 800;
-  font-size: 1rem;
+  font-size: 8px;
   cursor: pointer;
   background-color:#4d2c91;
   text-align: center;
@@ -161,7 +162,7 @@ const Result = ({ resultType }) => {
         <div className="resultHeader">{resultType.header}</div>
       </div>     
       <div className="imgContainer">
-          <img src={resultType.picPath} alt="인물사진" />
+          <img src={resultType.picPath} alt="인물사진" onLoad={()=>{dispatch(finishLoading('result'))}}/>
       </div>      
       <div className="content">
         <div className="typeDef">

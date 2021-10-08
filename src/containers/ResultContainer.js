@@ -52,7 +52,7 @@ const ResultContainer = ()=>{
       const JvsP = answer.JvsP > 1 ? 'J' : 'P';
       const resultType = EvsI+NvsS+TvsF+JvsP;
       dispatch(decideType(resultType));
-      dispatch(finishLoading('result'));
+      // dispatch(finishLoading('result'));
     }
 
     if(status === 'ready' &&window.Kakao) {
@@ -74,16 +74,7 @@ const ResultContainer = ()=>{
     )
     } else {
       return (
-        <Suspense fallback={
-          <LoadingBlock>
-            <div className="imgContainer">
-              <img src="img/Loading.gif" alt="로딩중..." />
-            </div>
-            나와 잘 맞는 연예인 검색 중...
-        </LoadingBlock>
-        }>
           <Result resultType={result.resultType} />
-        </Suspense>        
       )
     }
 };
