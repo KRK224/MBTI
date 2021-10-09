@@ -1,7 +1,7 @@
-import React, {useEffect, Suspense} from 'react';
+import React, {useEffect} from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 // import { decideType } from '../modules/result';
-import Result from '../components/Result';
+import ResultTemplate from '../components/ResultTemplate';
 import { decideType } from '../modules/result';
 import { startLoading, finishLoading } from '../modules/loading';
 import { useScript } from '../hooks/hooks';
@@ -43,7 +43,7 @@ const ResultContainer = ()=>{
     return <Loading />
     } else {
       return (
-        <Result resultType={result.resultType} />
+        <ResultTemplate resultType={result.resultType} />
       )
     }
 };

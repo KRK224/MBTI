@@ -10,6 +10,7 @@ import { FacebookShareButton, FacebookIcon, TwitterShareButton, TwitterIcon } fr
 import { CopyToClipboard } from 'react-copy-to-clipboard';
 import loading, { startLoading, finishLoading } from '../modules/loading';
 import Loading from './common/Loading';
+import { useSelector } from 'react-redux';
 
 
 const ResultBlock = styled.div`
@@ -135,11 +136,12 @@ const KakaoIcon = styled.img`
 `;
 
 
-const Result = ({ resultType }) => {
+const ResultTemplate = ({ resultType }) => {
 
   // console.log('현재 resultType 상태는:')
   // console.log(resultType);
   const dispatch = useDispatch();
+  const loading = useSelector(state=>state.loading);
   const textList = resultType.text.map((text,index)=>{
     return (<li key={index}>{text}</li>)
   })
@@ -158,9 +160,19 @@ const Result = ({ resultType }) => {
       requestUrl: currentUrl,
     });
   };
-  
 
-  if (loading.img) {
+  useEffect(()=>{
+    // dispatch(startLoading('img'));
+    const timeout = setTimeout(()=>{
+      console.log('setTimeout 시작');
+      dispatch(finishLoading('img'));
+    }, 2000)
+    
+    return ()=> clearTimeout(timeout);
+
+  }, [])
+
+  if(loading.img) {
     return <Loading />
   }
 
@@ -171,7 +183,7 @@ const Result = ({ resultType }) => {
         <div className="resultHeader">{resultType.header}</div>
       </div>     
       <div className="imgContainer">
-          <img src={resultType.picPath} alt="인물사진" onLoad={()=>{dispatch(finishLoading('img'))}}/>
+          <img src={resultType.picPath} alt="인물사진" />
       </div>      
       <div className="content">
         <div className="typeDef">
@@ -193,7 +205,7 @@ const Result = ({ resultType }) => {
           <TwitterIcon size={48} round={true} borderRadius={24}></TwitterIcon>
         </TwitterShareButton>
         <CopyToClipboard text={currentUrl}>
-          <URLShareButton>URL</URLShareButton>
+          <URLShareButton onClick={()=>{alert('URL이 복사되었습니다.')}}>URL</URLShareButton>
         </CopyToClipboard>
 
         <KakaoShareButton onClick={handleKakaoButton}>
@@ -211,4 +223,4 @@ const Result = ({ resultType }) => {
   );
 };
 
-export default Result;
+export default ResultTemplate;

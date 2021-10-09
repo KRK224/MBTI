@@ -149,7 +149,7 @@ const QuestionTemplate = ({ question, questions, fstClicked, sndClicked, calcAns
       </div>
 
       <div className="queryBody">
-        <div className="queryText">{question.query.split('\n').map(line=>{return(<span>{line}<br /></span>)})}</div>
+        <div className="queryText">{question.query.split('\n').map((line, idx)=>{return(<span key={idx}>{line}<br /></span>)})}</div>
         {question.idx ===11?
           <div className="btnForAnswer">
             <Link to='/result' style={{textDecoration:'none'}}>
