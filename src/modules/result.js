@@ -14,7 +14,7 @@ const initState ={
   typeList:[
     {
       type:'ISFJ',
-      picPath: 'img/김영남/김영남.png',
+      picPath: '/img/김영남/김영남.png',
       header: '열정! 열정! 열정!',
       celebrity: 'ESTP 김영남과',
       text: [
@@ -26,7 +26,7 @@ const initState ={
     },
     {
       type:'ISTJ',
-      picPath: 'img/최준/최준-윙크.gif',
+      picPath: '/img/최준/최준-윙크.gif',
       header: '어? 이쁘다',
       celebrity: 'ESFP 최준과',
       text: [
@@ -39,7 +39,7 @@ const initState ={
     },
     {
       type:'INFJ',
-      picPath: 'img/쿨제이/쿨제이.png',
+      picPath: '/img/쿨제이/쿨제이.png',
       header: '지금까지 열심히 했잖아 내가, 어?!',
       celebrity: 'ENTP 쿨제이와',
       text: [
@@ -52,7 +52,7 @@ const initState ={
     },
     {
       type:'INTJ',
-      picPath: 'img/이택조/이택조.jfif',
+      picPath: '/img/이택조/이택조.jfif',
       header: '어른이 이야기하면 임마!',
       celebrity: 'ENFP 이택조와',
       text: [
@@ -65,7 +65,7 @@ const initState ={
     },
     {
       type:'ISTP',
-      picPath: 'img/배용남/배용남.png',
+      picPath: '/img/배용남/배용남.png',
       header: '야, 왔으면 인사를 해',
       celebrity: 'ESTJ 배용남과',
       text: [
@@ -78,7 +78,7 @@ const initState ={
     },
     {
       type:'ISFP',
-      picPath: 'img/차진석/차진석.jfif',
+      picPath: '/img/차진석/차진석.jfif',
       header: '중고차 필요할 땐? 차차차 차진석!',
       celebrity: 'ESFJ 차진석과',
       text: [
@@ -91,7 +91,7 @@ const initState ={
     },
     {
       type:'INFP',
-      picPath: 'img/방재호/방재호.png',
+      picPath: '/img/방재호/방재호.png',
       header: '안녕하세요! 뉴라이프 팀드림\n 디스트리뷰터 방재호입니다.',
       celebrity: 'ENTJ 방재호와',
       text: [
@@ -104,7 +104,7 @@ const initState ={
     },
     {
       type:'INTP',
-      picPath: 'img/배용남/배용남.png',
+      picPath: '/img/배용남/배용남.png',
       header: '야, 왔으면 인사를 해',
       celebrity: 'ESTJ 배용남과',
       text: [
@@ -117,7 +117,7 @@ const initState ={
     },
     {
       type:'ESTP',
-      picPath: 'img/배용길/배용길.png',
+      picPath: '/img/배용길/배용길.png',
       header: 'If You Marry Me,\n Cooking is My Job.',
       celebrity: 'ISFJ 배용길과',
       text: [
@@ -130,7 +130,7 @@ const initState ={
     },
     {
       type:'ESFP',
-      picPath: 'img/배용길/배용길.png',
+      picPath: '/img/배용길/배용길.png',
       header: 'If You Marry Me,\n Cooking is My Job.',
       celebrity: 'ISFJ 배용길과',
       text: [
@@ -143,7 +143,7 @@ const initState ={
     },
     {
       type:'ENFP',
-      picPath: 'img/이호창/이호창.png',
+      picPath: '/img/이호창/이호창.png',
       header: '재벌 처음 봐요?',
       celebrity: 'INTJ 이호창과',
       text: [
@@ -156,7 +156,7 @@ const initState ={
     },
     {
       type:'ENTP',
-      picPath: 'img/정광용/정광용.png',
+      picPath: '/img/정광용/정광용.png',
       header: '자..그.. 만나서... 반갑습니다.',
       celebrity: 'INFJ 광용쌤과',
       text: [
@@ -169,7 +169,7 @@ const initState ={
     },
     {
       type:'ESTJ',
-      picPath: 'img/임키/임키.png',
+      picPath: '/img/임키/임키.png',
       header: 'skrr~ suction krr!',
       celebrity: 'ISTP 임플란티드 키드와',
       text: [
@@ -182,7 +182,7 @@ const initState ={
     },
     {
       type:'ESFJ',
-      picPath: 'img/혁이형/혁이형.jpg',
+      picPath: '/img/혁이형/혁이형.jpg',
       header: '어, 왔니?',
       celebrity: 'ISFP 혁이형과',
       text: [
@@ -195,7 +195,7 @@ const initState ={
     },
     {
       type:'ENFJ',
-      picPath: 'img/혁이형/혁이형.jpg',
+      picPath: '/img/혁이형/혁이형.jpg',
       header: '어, 왔니?',
       celebrity: 'ISFP 혁이형과',
       text: [
@@ -208,7 +208,7 @@ const initState ={
     },
     {
       type:'ENTJ',
-      picPath: 'img/제이호/제이호.png',
+      picPath: '/img/제이호/제이호.png',
       header: '하이 에이치아이~ 매드몬스터! \n 제이호야~',
       celebrity: 'INFP 제이호와',
       text: [
