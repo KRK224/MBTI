@@ -5,6 +5,7 @@ import Responsive from './components/common/Responsive';
 import Home from './components/Home';
 import Questions from './components/Questions';
 import ResultContainer from './containers/ResultContainer';
+import SharingContainer from './containers/SharingContainer';
 import styled from 'styled-components';
 
 const AppBlock = styled.div`
@@ -18,7 +19,8 @@ const App = () =>{
       <Responsive>
         <Route path="/" component={Home} exact={true}/>
         <Route path="/ques" component={Questions} />
-        <Route path="/result" component={ResultContainer} / >
+        <Route path="/result" component={ResultContainer} exact={true}/ >
+        <Route path="/result/:type" component ={SharingContainer}/>
       </Responsive>
     </AppBlock>
 

@@ -7,7 +7,7 @@ import { startLoading, finishLoading } from '../modules/loading';
 import { useScript } from '../hooks/hooks';
 import Loading from '../components/common/Loading';
 
-const ResultContainer = ()=>{
+const ResultContainer = ({match})=>{
   const answer = useSelector(state=>state.answer);
   const result = useSelector(state=>state.result);
   const loading = useSelector(state=>state.loading);
@@ -43,7 +43,7 @@ const ResultContainer = ()=>{
     return <Loading />
     } else {
       return (
-        <ResultTemplate resultType={result.resultType} />
+        <ResultTemplate resultType={result.resultType} match={match}/>
       )
     }
 };

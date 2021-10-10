@@ -8,7 +8,7 @@ import { initialize_ques } from '../modules/questions';
 import { initialize_result } from '../modules/result';
 import { FacebookShareButton, FacebookIcon, TwitterShareButton, TwitterIcon } from 'react-share';
 import { CopyToClipboard } from 'react-copy-to-clipboard';
-import loading, { startLoading, finishLoading } from '../modules/loading';
+import { finishLoading } from '../modules/loading';
 import Loading from './common/Loading';
 import { useSelector } from 'react-redux';
 
@@ -81,16 +81,29 @@ const ResultBlock = styled.div`
     }
   }
 
-  .sharing {
-    margin-top: 3rem;
-    .sharingText{
-      font-size: 0.8rem;
-      margin-bottom: 1rem;
-    }
+  .shareAndReturn {
+    margin-top: 2rem;
+    margin-bottom: 4rem;
+    div + div {
+      margin: 2rem 0 ;
+    } 
   }
 
-  .returnHome {
+  .toShareAndReturn {
+    margin-top: 2rem;
     margin-bottom: 4rem;
+    display: flex;
+    div + div {
+      margin-left: 2rem;
+    }
+
+    @media (max-width: 768px) {
+      display: block;
+      margin-bottom: 3rem;
+      div + div {
+        margin: 2rem 0;
+      }
+    }
   }
 
 `;
@@ -136,8 +149,8 @@ const KakaoIcon = styled.img`
 `;
 
 
-const ResultTemplate = ({ resultType }) => {
-
+const ResultTemplate = ({ resultType, match }) => {
+  console.log(match);
   // console.log('현재 resultType 상태는:')
   // console.log(resultType);
   const dispatch = useDispatch();
@@ -153,6 +166,13 @@ const ResultTemplate = ({ resultType }) => {
     dispatch(initialize_result());
   }, [dispatch])
   
+  const isEmpty = (obj) =>{
+    if(obj.constructor === Object && Object.keys(obj).length === 0){
+      return true;
+    } 
+    return false;
+  }
+
   const currentUrl = window.location.href;
 
   const handleKakaoButton =()=>{
@@ -164,13 +184,12 @@ const ResultTemplate = ({ resultType }) => {
   useEffect(()=>{
     // dispatch(startLoading('img'));
     const timeout = setTimeout(()=>{
-      console.log('setTimeout 시작');
       dispatch(finishLoading('img'));
     }, 2000)
     
     return ()=> clearTimeout(timeout);
 
-  }, [])
+  }, [dispatch])
 
   if(loading.img) {
     return <Loading />
@@ -196,29 +215,47 @@ const ResultTemplate = ({ resultType }) => {
           </ul>
         </div>
       </div>
-      <div className="sharing">
-      <GridContainer>
-        <FacebookShareButton url={currentUrl}>
-          <FacebookIcon size={48} round={true} borderRadius={24}></FacebookIcon>
-        </FacebookShareButton>
-        <TwitterShareButton url={currentUrl}>
-          <TwitterIcon size={48} round={true} borderRadius={24}></TwitterIcon>
-        </TwitterShareButton>
-        <CopyToClipboard text={currentUrl}>
-          <URLShareButton onClick={()=>{alert('URL이 복사되었습니다.')}}>URL</URLShareButton>
-        </CopyToClipboard>
+      
+      {!isEmpty(match.params) ?(
+      <div className="shareAndReturn">
+        <div className="sharing">
+          <GridContainer>
+            <FacebookShareButton url={currentUrl}>
+              <FacebookIcon size={48} round={true} borderRadius={24}></FacebookIcon>
+            </FacebookShareButton>
+            <TwitterShareButton url={currentUrl}>
+              <TwitterIcon size={48} round={true} borderRadius={24}></TwitterIcon>
+            </TwitterShareButton>
+            <CopyToClipboard text={currentUrl}>
+              <URLShareButton onClick={()=>{alert('URL이 복사되었습니다.')}}>URL</URLShareButton>
+            </CopyToClipboard>
 
-        <KakaoShareButton onClick={handleKakaoButton}>
-          <KakaoIcon src='./img/Kakao.png'></KakaoIcon>
-        </KakaoShareButton>
-        
-      </GridContainer>
+            <KakaoShareButton onClick={handleKakaoButton}>
+              <KakaoIcon src='/img/Kakao.png'></KakaoIcon>
+            </KakaoShareButton>
+          </GridContainer>
+        </div>
+        <div className="returnHome">
+          <Link to='/' style={{textDecoration:'none'}}>
+            <Button onClick={initialize}>테스트 다시하기</Button>
+          </Link>
+        </div>
       </div>
-      <div className="returnHome">
-        <Link to='/' style={{textDecoration:'none'}}>
-          <Button onClick={initialize}>테스트 다시하기</Button>
-        </Link>
+      ) : (
+      <div className='toShareAndReturn'>
+        <div className="returnHome">
+          <Link to='/' style={{textDecoration:'none'}}>
+            <Button onClick={initialize}>테스트 다시하기</Button>
+          </Link>
+        </div>
+        <div className="toSharing">
+          <Link to={`/result/${resultType.type}`} style={{textDecoration:'none'}}>
+            <Button>친구에게 공유하기</Button>
+          </Link>
+        </div>
       </div>
+      )}
+      
     </ResultBlock>
   );
 };
