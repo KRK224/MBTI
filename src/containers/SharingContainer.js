@@ -5,6 +5,7 @@ import ResultTemplate from '../components/ResultTemplate';
 import { decideType } from '../modules/result';
 // import { startLoading, finishLoading } from '../modules/loading';
 import { useScript } from '../hooks/hooks';
+import {Helmet} from 'react-helmet';
 
 
 
@@ -25,11 +26,19 @@ const SharingContainer = ({match})=>{
     }
   }
   },
-    [dispatch, status]
+    [dispatch, status, type]
   );
+  
 
   return (
-    <ResultTemplate resultType={result.resultType} match={match}/>
+    <div>
+      <Helmet>
+        <meta property="og:title" content='test' />
+        <meta property="og:description" content={`${result.resultType.type}인 당신은 ${result.resultType.celebrity}  잘 맞아요`} />
+        <meta property='og:image' content= {`%PUBLIC_URL%/${result.resultType.picPath}`}/>
+      </Helmet>
+      <ResultTemplate resultType={result.resultType} match={match}/>
+    </div>
   )
 
 };

@@ -4,7 +4,7 @@ import { useSelector, useDispatch } from 'react-redux';
 import ResultTemplate from '../components/ResultTemplate';
 import { decideType } from '../modules/result';
 import { startLoading, finishLoading } from '../modules/loading';
-import { useScript } from '../hooks/hooks';
+// import { useScript } from '../hooks/hooks';
 import Loading from '../components/common/Loading';
 
 const ResultContainer = ({match})=>{
@@ -13,7 +13,7 @@ const ResultContainer = ({match})=>{
   const loading = useSelector(state=>state.loading);
   const dispatch = useDispatch();
 
-  const status = useScript("https://developers.kakao.com/sdk/js/kakao.js");
+  // const status = useScript("https://developers.kakao.com/sdk/js/kakao.js");
     
   useEffect(()=>{
     
@@ -31,13 +31,13 @@ const ResultContainer = ({match})=>{
       dispatch(startLoading('img'));
     }
 
-    if(status === 'ready' &&window.Kakao) {
-      if(!window.Kakao.isInitialized()){
-        window.Kakao.init(process.env.REACT_APP_KAppKey);
-    }
-  }
+  //   if(status === 'ready' &&window.Kakao) {
+  //     if(!window.Kakao.isInitialized()){
+  //       window.Kakao.init(process.env.REACT_APP_KAppKey);
+  //   }
+  // }
   },
-    [dispatch, answer, status, result]
+    [dispatch, answer, result, loading]
   );
   if(loading.result){
     return <Loading />

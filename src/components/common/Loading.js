@@ -10,7 +10,7 @@ const LoadingBlock = styled.div`
   .imgContainer {
     margin: 2rem auto;
     @media (max-width: 480px) {
-      width: 300px;
+      width: 256px;
     }
     @media (min-width: 768px) {
       width: 70%;

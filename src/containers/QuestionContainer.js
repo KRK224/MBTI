@@ -50,7 +50,7 @@ const QuestionContainer = ({match}) =>{
     console.log('결과지 계산이 종료되었습니다.');
     dispatch(startLoading('result'));
   },
-    [dispatch, questions]
+    [dispatch]
   );
   
   return(
