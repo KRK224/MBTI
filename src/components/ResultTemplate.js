@@ -150,7 +150,7 @@ const KakaoIcon = styled.img`
 
 
 const ResultTemplate = ({ resultType, match }) => {
-  console.log(match);
+  // console.log(match);
   // console.log('현재 resultType 상태는:')
   // console.log(resultType);
   const dispatch = useDispatch();

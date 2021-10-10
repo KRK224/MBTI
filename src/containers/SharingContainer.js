@@ -5,7 +5,7 @@ import ResultTemplate from '../components/ResultTemplate';
 import { decideType } from '../modules/result';
 // import { startLoading, finishLoading } from '../modules/loading';
 import { useScript } from '../hooks/hooks';
-import {Helmet} from 'react-helmet';
+
 
 
 
@@ -17,7 +17,6 @@ const SharingContainer = ({match})=>{
   const status = useScript("https://developers.kakao.com/sdk/js/kakao.js");
     
   useEffect(()=>{
-    
     dispatch(decideType(type));
 
     if(status === 'ready' &&window.Kakao) {
@@ -25,6 +24,13 @@ const SharingContainer = ({match})=>{
         window.Kakao.init(process.env.REACT_APP_KAppKey);
     }
   }
+    const ogDescription = document.querySelector('meta[property="og:description"]');
+    const ogImage = document.querySelector('meta[property="og:image"]');
+
+    
+    ogDescription.setAttribute("content", result.resultType.header);
+    ogImage.setAttribute("content", result.resultType.picPath);
+
   },
     [dispatch, status, type]
   );
@@ -32,11 +38,6 @@ const SharingContainer = ({match})=>{
 
   return (
     <div>
-      <Helmet>
-        <meta property="og:title" content='test' />
-        <meta property="og:description" content={`${result.resultType.type}인 당신은 ${result.resultType.celebrity}  잘 맞아요`} />
-        <meta property='og:image' content= {`%PUBLIC_URL%/${result.resultType.picPath}`}/>
-      </Helmet>
       <ResultTemplate resultType={result.resultType} match={match}/>
     </div>
   )
