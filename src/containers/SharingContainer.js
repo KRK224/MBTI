@@ -29,10 +29,10 @@ const SharingContainer = ({match})=>{
 
     
     ogDescription.setAttribute("content", result.resultType.header);
-    ogImage.setAttribute("content", result.resultType.picPath);
+    ogImage.setAttribute("content", `%PUBLIC_URL%/${result.resultType.picPath}`);
 
   },
-    [dispatch, status, type, process]
+    [dispatch, status, type]
   );
   
 
