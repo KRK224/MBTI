@@ -1,4 +1,4 @@
-import React, {useCallback, useEffect, useState} from 'react';
+import React, {useCallback, useEffect,} from 'react';
 import styled from 'styled-components';
 import { Link } from 'react-router-dom';
 import Button from './common/Button';
@@ -153,7 +153,7 @@ const ResultTemplate = ({ resultType, match }) => {
   // console.log(match);
   // console.log('현재 resultType 상태는:')
   // console.log(resultType);
-  const [currentUrl, setCurrentUrl]= useState(window.location.href);
+  const currentUrl= window.location.href;
   const dispatch = useDispatch();
   const loading = useSelector(state=>state.loading);
   const textList = resultType.text.map((text,index)=>{
@@ -180,10 +180,9 @@ const ResultTemplate = ({ resultType, match }) => {
       dispatch(finishLoading('img'));
     }, 2000)
     
-    setCurrentUrl(window.location.href);
     return ()=> clearTimeout(timeout);
 
-  }, [dispatch, currentUrl]);
+  }, [dispatch, ]);
 
   const handleKakaoButton =()=>{
     window.Kakao.Link.sendScrap({
