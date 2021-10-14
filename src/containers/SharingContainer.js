@@ -32,7 +32,7 @@ const SharingContainer = ({match})=>{
     ogImage.setAttribute("content", result.resultType.picPath);
 
   },
-    [dispatch, status, type]
+    [dispatch, status, type, process]
   );
   
 
