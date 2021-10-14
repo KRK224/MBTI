@@ -26,11 +26,11 @@ const SharingContainer = ({match})=>{
   }
     const ogDescription = document.querySelector('meta[property="og:description"]');
     const ogImage = document.querySelector('meta[property="og:image"]');
-
+    const ogUrl = document.querySelector('meta[property="og:url"]');
     
     ogDescription.setAttribute("content", result.resultType.header);
     ogImage.setAttribute("content", `https://eager-ride-0f8027.netlify.app${result.resultType.picPath}`);
-
+    ogUrl.setAttribute("content", `https://eager-ride-0f8027.netlify.app/result/${result.resultType.type}`);
   },
     [dispatch, status, type]
   );
