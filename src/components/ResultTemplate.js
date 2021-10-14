@@ -226,7 +226,7 @@ const ResultTemplate = ({ resultType, match }) => {
             <TwitterShareButton url={currentUrl}>
               <TwitterIcon size={48} round={true} borderRadius={24}></TwitterIcon>
             </TwitterShareButton>
-            <CopyToClipboard text={currentUrl}>
+            <CopyToClipboard text={currentUrl+'/'}>
               <URLShareButton onClick={()=>{alert('URL이 복사되었습니다.')}}>URL</URLShareButton>
             </CopyToClipboard>
 
