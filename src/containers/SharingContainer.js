@@ -29,7 +29,7 @@ const SharingContainer = ({match})=>{
 
     
     ogDescription.setAttribute("content", result.resultType.header);
-    ogImage.setAttribute("content", `%PUBLIC_URL%/${result.resultType.picPath}`);
+    ogImage.setAttribute("content", `https://eager-ride-0f8027.netlify.app${result.resultType.picPath}`);
 
   },
     [dispatch, status, type]
