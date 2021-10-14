@@ -10,7 +10,18 @@ export const decideType = createAction(DECIDETYPE, resultType =>resultType
 export const initialize_result = createAction(INITIALIZE);
 
 const initState ={
-  resultType: {},
+  resultType: {
+    type:'ISFJ',
+    picPath: '/img/김영남/김영남.png',
+    header: '열정! 열정! 열정!',
+    celebrity: 'ESTP 김영남과',
+    text: [
+      '타고난 해결사로써 문제를 해결하는 능력이 타의 추종을 불허하나 동시에 말썽꾸러기로써 문제를 유발하는 능력 또한 타의 추종을 불허한 스타일이에요.',
+      '삶을 즐기며 살며, 스릴을 좋아합니다.',
+      '매우 빠르게 생각과 행동을 하고 현실적이기 때문에 감정적 이거나 우유부단한 사람에 대해 답답해 하는 경향이 있습니다.',
+      '무대의 중심에 서는 것과 관심을 즐깁니다.',
+    ],
+  },
   typeList:[
     {
       type:'ISFJ',
@@ -227,7 +238,8 @@ const result = handleActions({
   [DECIDETYPE]: (state, action)=>{
     const resultObj = state.typeList.find((list)=>{
       return list.type === action.payload;
-    })    
+    })
+    console.log("DecideType is working now.");    
     return produce(state, draft =>({...draft, resultType:resultObj}))
   },
   [INITIALIZE]: () => produce(initState, draft=>draft),

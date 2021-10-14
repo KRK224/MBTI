@@ -21,6 +21,7 @@
     "react-scripts": "4.0.3",
     "react-share": "^4.4.0",
     "redux": "^4.1.1",
+    "redux-action-buffer": "^1.2.0",
     "redux-actions": "^2.6.5",
     "redux-devtools-extension": "^2.13.9",
     "redux-persist": "^6.0.0",

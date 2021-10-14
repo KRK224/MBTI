@@ -3,12 +3,13 @@ import answer from './answer';
 import questions from './questions';
 import result from './result';
 import loading from './loading';
-import storage from 'redux-persist/lib/storage';
+import storageSession from 'redux-persist/lib/storage/session';
 import { persistReducer } from 'redux-persist';
+
 
 const persistConfig = {
   key: 'root',
-  storage,
+  storage: storageSession,
 };
 
 const rootReducer = combineReducers({

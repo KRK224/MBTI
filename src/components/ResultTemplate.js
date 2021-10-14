@@ -153,7 +153,7 @@ const ResultTemplate = ({ resultType, match }) => {
   // console.log(match);
   // console.log('현재 resultType 상태는:')
   // console.log(resultType);
-  const currentUrl= window.location.href;
+  
   const dispatch = useDispatch();
   const loading = useSelector(state=>state.loading);
   const textList = resultType.text.map((text,index)=>{
@@ -174,6 +174,7 @@ const ResultTemplate = ({ resultType, match }) => {
     return false;
   }
 
+  
   useEffect(()=>{
     // dispatch(startLoading('img'));
     const timeout = setTimeout(()=>{
@@ -182,7 +183,9 @@ const ResultTemplate = ({ resultType, match }) => {
     
     return ()=> clearTimeout(timeout);
 
-  }, [dispatch, ]);
+  }, [dispatch,]);
+
+  const currentUrl= window.location.href;
 
   const handleKakaoButton =()=>{
     window.Kakao.Link.sendScrap({

@@ -5,19 +5,24 @@ import ResultTemplate from '../components/ResultTemplate';
 import { decideType } from '../modules/result';
 // import { startLoading, finishLoading } from '../modules/loading';
 import { useScript } from '../hooks/hooks';
-
+import Loading from '../components/common/Loading';
 
 
 
 const SharingContainer = ({match})=>{
   
+  const persist = useSelector(state=>state._persist);
   const result = useSelector(state=>state.result);
   const dispatch = useDispatch();
-  const {type} = match.params;
   const status = useScript("https://developers.kakao.com/sdk/js/kakao.js");
-    
+  
   useEffect(()=>{
-    dispatch(decideType(type));
+    const {type} = match.params;
+    if(persist.rehydrated) {
+      console.log('hydration is ended');
+      dispatch(decideType(type));
+    }
+    
 
     if(status === 'ready' &&window.Kakao) {
       if(!window.Kakao.isInitialized()){
@@ -30,15 +35,15 @@ const SharingContainer = ({match})=>{
     
     ogDescription.setAttribute("content", result.resultType.header);
     ogImage.setAttribute("content", `https://eager-ride-0f8027.netlify.app${result.resultType.picPath}`);
-    ogUrl.setAttribute("content", `https://eager-ride-0f8027.netlify.app/result/${result.resultType.type}/`);
+    ogUrl.setAttribute("content", `https://eager-ride-0f8027.netlify.app/result/${result.resultType.type}`);
   },
-    [dispatch, status, type]
+    [dispatch, status, match, persist]
   );
   
 
   return (
     <div>
-      <ResultTemplate resultType={result.resultType} match={match}/>
+      {persist.rehydrated? (<ResultTemplate resultType={result.resultType} match={match}/>): <Loading />}
     </div>
   )
 

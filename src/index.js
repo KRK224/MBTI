@@ -12,17 +12,18 @@ import persistedReducer from './modules';
 import {persistStore} from 'redux-persist';
 import {PersistGate} from 'redux-persist/integration/react';
 
-const store = createStore(persistedReducer, composeWithDevTools());
 
-const persistor = persistStore(store);
+const store = createStore(persistedReducer, {}, composeWithDevTools());
+
+const persistor = persistStore(store, {});
 
 ReactDOM.render(
   <React.StrictMode>
     <Provider store={store}>
-      <PersistGate persistor={persistor}>
-      <BrowserRouter>
-        <App />
-      </BrowserRouter>
+      <PersistGate loading={null} persistor={persistor}>
+        <BrowserRouter>
+          <App />
+        </BrowserRouter>
       </PersistGate>
     </Provider>
   </React.StrictMode>,
