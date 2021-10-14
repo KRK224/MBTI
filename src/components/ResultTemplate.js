@@ -66,14 +66,17 @@ const ResultBlock = styled.div`
     
     .typeDef {
       margin: 1rem;
+      div{
+        font-size: 1.2rem;
+      }
       div + div {
-        margin: 5rem 0 0;
+        margin: 4rem 0 0;
         text-align: center;
       }
     }
     .text {
       padding: 1rem;
-      width: 90%;
+      width: 100%;
       text-align: left;
       li+li {
         margin-top: 1.5rem;
