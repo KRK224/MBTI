@@ -1,4 +1,6 @@
 // hooks.js
+// 다른 Script load 해주는 Hook
+
 import { useState, useEffect } from "react";
 
 function useScript(src) {
