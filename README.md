@@ -4,7 +4,7 @@ MBTI Test 기능 구현 프로젝트입니다.
 <br />
 https://psmbti.site/
 
-![이미지](/public/img/MBTI.gif "포트폴리오 시현.gif")
+![이미지](/public/img/MBTI.gif "MBTI 프로그램 시현.gif")
 
 ### 주요 Spec
 ---
